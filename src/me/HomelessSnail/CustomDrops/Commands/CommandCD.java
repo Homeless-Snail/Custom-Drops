@@ -1,4 +1,4 @@
-package me.HomelessSnail.CustomDropsCommands;
+package me.HomelessSnail.CustomDrops.Commands;
 
 import me.HomelessSnail.CustomDrops.CustomDropsMain;
 
@@ -8,10 +8,10 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
 
-public class CustomDropsCommandCD implements CommandExecutor {
+public class CommandCD implements CommandExecutor {
 	public CustomDropsMain plugin;
 
-    public CustomDropsCommandCD(CustomDropsMain instance) {
+    public CommandCD(CustomDropsMain instance) {
         this.plugin = instance;
     }
 

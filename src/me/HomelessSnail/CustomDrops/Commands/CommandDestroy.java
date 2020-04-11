@@ -1,4 +1,4 @@
-package me.HomelessSnail.CustomDropsCommands;
+package me.HomelessSnail.CustomDrops.Commands;
 
 import me.HomelessSnail.CustomDrops.CustomDropsMain;
 import org.bukkit.ChatColor;
@@ -7,12 +7,11 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CustomDropsCommandDestroy
-implements CommandExecutor {
+public class CommandDestroy implements CommandExecutor {
     
 	public CustomDropsMain plugin;
 
-    public CustomDropsCommandDestroy(CustomDropsMain instance) {
+    public CommandDestroy(CustomDropsMain instance) {
         this.plugin = instance;
     }
 

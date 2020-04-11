@@ -1,7 +1,8 @@
 package me.HomelessSnail.CustomDrops;
 
-import me.HomelessSnail.CustomDropsCommands.*;
-
+import me.HomelessSnail.CustomDrops.Commands.CommandCD;
+import me.HomelessSnail.CustomDrops.Commands.CommandDestroy;
+import me.HomelessSnail.CustomDrops.Commands.CommandDrop;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +26,9 @@ public class CustomDropsMain extends JavaPlugin{
 	    public ArrayList<String> gsToggle = new ArrayList<String>();
 	    public List<World> allowedWorlds = new ArrayList<World>();
 	    public CustomDropsListener listener;
-	    public CustomDropsCommandDrop dropCommand;
-	    public CustomDropsCommandDestroy destroyCommand;
-	    public CustomDropsCommandCD cdCommand;
+	    public CommandDrop dropCommand;
+	    public CommandDestroy destroyCommand;
+	    public CommandCD cdCommand;
 	    public CustomDropsMethods methods;
 	    protected File configDir;
 	    protected File configFile;
@@ -41,9 +42,9 @@ public class CustomDropsMain extends JavaPlugin{
 
 	    public void onEnable() {
 	        this.listener = new CustomDropsListener(this);
-	        this.dropCommand = new CustomDropsCommandDrop(this);
-	        this.destroyCommand = new CustomDropsCommandDestroy(this);
-	        this.cdCommand = new CustomDropsCommandCD(this);
+	        this.dropCommand = new CommandDrop(this);
+	        this.destroyCommand = new CommandDestroy(this);
+	        this.cdCommand = new CommandCD(this);
 	        this.methods = new CustomDropsMethods(this);
 	        try {
 	            this.config = this.getConfig();
