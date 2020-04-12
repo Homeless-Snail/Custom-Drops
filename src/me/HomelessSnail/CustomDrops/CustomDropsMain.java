@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -25,19 +26,20 @@ public class CustomDropsMain extends JavaPlugin{
 	    public ArrayList<String> paneToggle = new ArrayList<String>();
 	    public ArrayList<String> gsToggle = new ArrayList<String>();
 	    public List<World> allowedWorlds = new ArrayList<World>();
+	    public List<Material> allowedMaterials = new ArrayList<>();
 	    public CustomDropsListener listener;
 	    public CommandDrop dropCommand;
 	    public CommandDestroy destroyCommand;
 	    public CommandCD cdCommand;
 	    public CustomDropsMethods methods;
-	    protected File configDir;
-	    protected File configFile;
-	    protected int damChance;
-	    protected int damAmount;
-	    protected int dropChance;
-	    protected boolean glassPanes;
-	    protected boolean glassConfig;
-	    protected boolean debug;
+	    public File configDir;
+	    public File configFile;
+	    public int damChance;
+	    public int damAmount;
+	    public int dropChance;
+	    public boolean glassPanes;
+	    public boolean glassConfig;
+	    public boolean debug;
 	    public int glowstoneConfig;
 
 	    public void onEnable() {

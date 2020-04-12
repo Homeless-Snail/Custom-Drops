@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CommandDrop implements CommandExecutor {
+public class CommandDrop extends CustomDropsMain implements CommandExecutor  {
 	public CustomDropsMain plugin;
 
     public CommandDrop(CustomDropsMain instance) {
@@ -21,36 +21,36 @@ public class CommandDrop implements CommandExecutor {
             if (arg.length == 1) {
                 if (arg[0].equalsIgnoreCase("glass")) {
                     if (sender.hasPermission("customdrops.toggle.*") || sender.hasPermission("customdrops.toggle.glass") || sender.hasPermission("customdrops.*") || sender.isOp()) {
-                        if (this.plugin.glassToggle.contains(PlayerName)) {
-                            this.plugin.glassToggle.remove(PlayerName);
+                        if (glassToggle.contains(PlayerName)) {
+                            glassToggle.remove(PlayerName);
                             sender.sendMessage((Object)ChatColor.GREEN + "Glass will now be dropped");
                             return true;
                         }
-                        if (!this.plugin.glassToggle.contains(PlayerName)) {
+                        if (!glassToggle.contains(PlayerName)) {
                             sender.sendMessage((Object)ChatColor.GREEN + "Glass is already being dropped!");
                             return true;
                         }
                     }
                 } else if (arg[0].equalsIgnoreCase("glasspanes")) {
                     if (sender.hasPermission("customdrops.toggle.*") || sender.hasPermission("customdrops.toggle.glasspanes") || sender.hasPermission("customdrops.*") || sender.isOp()) {
-                        if (this.plugin.paneToggle.contains(PlayerName)) {
-                            this.plugin.paneToggle.remove(PlayerName);
+                        if (paneToggle.contains(PlayerName)) {
+                            paneToggle.remove(PlayerName);
                             sender.sendMessage((Object)ChatColor.GREEN + "Glass Panes will now be dropped");
                             return true;
                         }
-                        if (!this.plugin.paneToggle.contains(PlayerName)) {
+                        if (!paneToggle.contains(PlayerName)) {
                             sender.sendMessage((Object)ChatColor.GREEN + "Glass Panes are already being dropped!");
                             return true;
                         }
                     }
                 } else if (arg[0].equalsIgnoreCase("glowstone") && (sender.hasPermission("customdrops.toggle.*") || sender.hasPermission("customdrops.toggle.glowstone") || sender.hasPermission("customdrops.*") || sender.isOp())) {
-                    if (this.plugin.gsToggle.contains(PlayerName)) {
-                        this.plugin.gsToggle.remove(PlayerName);
-                        sender.sendMessage((Object)ChatColor.GREEN + "Glowstone Dust will now drop " + this.plugin.glowstoneConfig + " on each break");
+                    if (gsToggle.contains(PlayerName)) {
+                        gsToggle.remove(PlayerName);
+                        sender.sendMessage((Object)ChatColor.GREEN + "Glowstone Dust will now drop " + glowstoneConfig + " on each break");
                         return true;
                     }
-                    if (!this.plugin.gsToggle.contains(PlayerName)) {
-                        sender.sendMessage((Object)ChatColor.GREEN + "Glowstone Dust is already being dropped at " + this.plugin.glowstoneConfig + " dust per break");
+                    if (!gsToggle.contains(PlayerName)) {
+                        sender.sendMessage((Object)ChatColor.GREEN + "Glowstone Dust is already being dropped at " + glowstoneConfig + " dust per break");
                         return true;
                     }
                 }
